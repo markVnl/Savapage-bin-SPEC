@@ -38,8 +38,8 @@ cd  %{_builddir}/%{name}-%{releastag}
 %{make_build} all
 
 %install
-mkdir -p %{buildroot}/opt/savapage-bin-armv7l/
-install -m 755 target/%{binname} %{buildroot}/opt/savapage-bin-armv7l/%{binname}
+mkdir -p %{buildroot}/opt/savapage-bin-%{_target}/
+install -m 755 target/%{binname} %{buildroot}/opt/savapage-bin-%{_target}/%{binname}
 
 %clean
 rm -rf %{buildroot}
@@ -47,7 +47,7 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
-/opt/savapage-bin-armv7l/%{binname}
+/opt/savapage-bin-%{_target}/%{binname}
 
 %changelog
 * Wed Aug 25 2021 Mark Verlinde <mark.verlinde@gmail.com> 1.3.0-1

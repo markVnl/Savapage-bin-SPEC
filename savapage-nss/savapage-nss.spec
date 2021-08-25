@@ -23,8 +23,8 @@ users and groups using the Name Service Switch.
 %{make_build} all
 
 %install
-mkdir -p %{buildroot}/opt/savapage-bin-armv7l/ 
-install -m 755 target/%{name} %{buildroot}/opt/savapage-bin-armv7l/%{name}
+mkdir -p %{buildroot}/opt/savapage-bin-%{_target}/ 
+install -m 755 target/%{name} %{buildroot}/opt/savapage-bin-%{_target}/%{name}
 
 %clean
 rm -rf %{buildroot}
@@ -32,7 +32,7 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
-/opt/savapage-bin-armv7l/%{name}
+/opt/savapage-bin-%{_target}/%{name}
 
 %changelog
 * Wed Aug 25 2021 Mark Verlinde <mark.verlinde@gmail.com> 1.3.0-1
